@@ -8,7 +8,7 @@ import pandas as pd
 import streamlit as st
 import pickle
 import numpy as np
-@st.cache 
+
 st.markdown("<h1 style='text-align: center; color: black;'>Demo</h1>",unsafe_allow_html=True)
 st.title("Data Visualization")
 text = ["MaxDelq2PublicRecLast12M","MaxDelqEver"]
