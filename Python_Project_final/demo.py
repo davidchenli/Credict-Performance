@@ -40,7 +40,7 @@ df1=df.copy()
 
 if cols:
     for k in range(len(cols)):
-    st.sidebar.write("Input range of value for ",cols[k])
+   	st.sidebar.write("Input range of value for ",cols[k])
         if cols[k] not in text:           
             minimal = float(df1[cols[k]].min())
             maximal =float(df1[cols[k]].max())
