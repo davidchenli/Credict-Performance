@@ -47,7 +47,7 @@ if cols:
             maximal =float(df1[cols[k]].max())
             status = st.sidebar.slider('',float(minimal),float(maximal),(float(minimal),float(minimal)),key=bytes(k))
             st.sidebar.write(status)
-            line= df1.apply(lambda x: status[0]< int(x) < status[1])
+	    line= df1[cols[k]].apply(lambda x: status[0]< int(x) < status[1])
             df1 = df1.loc[line]
         else: 
             line = st.sidebar.selectbox("", list(choice.items()),format_func = lambda item: item[0],key = bytes(k+41))[1]
