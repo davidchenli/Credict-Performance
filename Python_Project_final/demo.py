@@ -43,8 +43,8 @@ if cols:
         st.sidebar.write("Input range of value for ",cols[k])
         if cols[k] not in text:           
            
-            minimal = df1[cols[k]].min()
-            maximal =df1[cols[k]].max()
+            minimal = float(df1[cols[k]].min())
+            maximal =float(df1[cols[k]].max())
             status = st.sidebar.slider('',minimal,maximal,(minimal,minimal),key=bytes(k))
             st.sidebar.write(status)
             line= df1[cols[k]].apply(lambda x: status[0]< int(x) < status[1])
