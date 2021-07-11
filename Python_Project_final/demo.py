@@ -45,12 +45,12 @@ if cols:
            
             minimal = df1[cols[k]].min()
             maximal =df1[cols[k]].max()
-            status = st.sidebar.slider('',float(minimal),float(maximal),(float(minimal),float(minimal)),key=k+1)
+            status = st.sidebar.slider('',float(minimal),float(maximal),(float(minimal),float(minimal)),key=k)
             st.sidebar.write(status)
             line= df1[cols[k]].apply(lambda x: status[0]< int(x) < status[1])
             df1 = df1.loc[line]
         else: 
-            line = st.sidebar.selectbox("", list(choice.items()),format_func = lambda item: item[0],key = k+41)[1]
+            line = st.sidebar.selectbox("", list(choice.items()),format_func = lambda item: item[0],key = float(k+41))[1]
             df1 = df1.loc[df1[cols[k]]==line]
 
 if rows > 0:
