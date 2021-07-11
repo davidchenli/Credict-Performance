@@ -37,7 +37,8 @@ cols = st.sidebar.multiselect('', columns)
 
 df1=df.copy()
 
-
+values = st.slider('Select a range of values', 0.0, 100.0, (25.0, 75.0))
+st.write('Values:', values)
 if cols:
     for k in range(len(cols)):
         st.sidebar.write("Input range of value for ",cols[k])
