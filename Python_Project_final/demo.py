@@ -44,8 +44,8 @@ if cols:
         if cols[k] not in text:           
             minimal = float(df1[cols[k]].min())
             maximal =float(df1[cols[k]].max())
-            values = st.slider('Select a range of values', 0.0, 100.0, (25.0, 75.0))
-            st.write('Values:', values)
+            status = st.slider('Select a range of values', 0.0, 100.0, (25.0, 75.0))
+            st.write('Values:', status)
             line= df1[cols[k]].apply(lambda x: status[0]< int(x) < status[1])
             df1 = df1.loc[line]
         else: 
