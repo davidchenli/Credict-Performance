@@ -45,7 +45,7 @@ if cols:
            
             minimal = float(df1[cols[k]].min())
             maximal =float(df1[cols[k]].max())
-            status = st.sidebar.slider('',minimal,maximal,(minimal,minimal),key=bytes(k))
+            status = st.sidebar.slider('',float(minimal),float(maximal),(float(minimal),float(minimal)),key=bytes(k))
             st.sidebar.write(status)
             line= df1[cols[k]].apply(lambda x: status[0]< int(x) < status[1])
             df1 = df1.loc[line]
